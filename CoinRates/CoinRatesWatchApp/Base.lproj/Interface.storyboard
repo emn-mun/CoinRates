@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Coin Rates Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="CoinRatesInterfaceController" customModule="CoinRatesWatchApp_Extension">
+                    <items>
+                        <table alignment="left" id="Fv2-jV-9ni">
+                            <items>
+                                <tableRow identifier="ExchangeRow" selectable="NO" id="1MF-7h-AdN" customClass="CoinRatesRowController" customModule="CoinRatesWatchApp_Extension">
+                                    <group key="rootItem" width="1" height="46" alignment="left" layout="vertical" id="9Py-BP-L8K">
+                                        <items>
+                                            <group width="1" height="20" alignment="left" id="wkY-EV-dav">
+                                                <items>
+                                                    <label alignment="left" text="Date" id="Kjh-au-CIu"/>
+                                                </items>
+                                            </group>
+                                            <group width="1" height="21" alignment="left" id="QIY-17-xEI">
+                                                <items>
+                                                    <label alignment="left" text="Rate" id="jxH-r9-cRQ"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateLabel" destination="Kjh-au-CIu" id="9dk-sI-2xV"/>
+                                        <outlet property="rateLabel" destination="jxH-r9-cRQ" id="YlS-zi-nM4"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="exchangeRatesTable" destination="Fv2-jV-9ni" id="0Yw-IE-Yed"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="CoinRatesWatchApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
